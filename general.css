@@ -1,0 +1,50 @@
+body {
+    background: rgb(153,153,204);
+}
+
+li {
+    font-style: italic;
+    color: green;
+}
+
+.button {
+
+}
+
+#connect {
+    background-color: #003366;
+    border: solid #FFFFFF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#drive_vertical{
+    background-color: #336699;
+    border: solid #FFFFFF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    display:block;
+    font-size: 60px;
+    width: 60px;
+    height: 120px;
+}
+
+#drive_horizontal{
+    background-color: #336699;
+    border: solid #FFFFFF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    float: left;
+    font-size: 60px;
+}

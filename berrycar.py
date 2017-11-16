@@ -5,6 +5,7 @@
 #14.11.2017
 
 import led_progs as LED
+import socket_progs as SOCKETS
 import time
 
 ########LED-Belegung am Treiberboard#################
@@ -21,6 +22,9 @@ IN3 = 21	#//INI3
 IN4 = 26	#//INI4
 
 leds = LED.LEDS(LED0,LED1,LED2)
+SOCKETS.create_socket()
+SOCKETS.bind_socket()
+SOCKETS.socket_accept()
 leds.initial_blink()
 time.sleep (2)
 

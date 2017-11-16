@@ -6,6 +6,30 @@
 import RPi.GPIO as GPIO
 import time
 
+import RPi.GPIO as GPIO
+import time
+#import threading
+
+print '....LED START!!!...'
+
+class LEDS(object):
+	def __init__(self, en,in1,in2):
+		self.en = en
+		self.in1 = in1
+		self.in2 = in2
+		
+		
+		GPIO.setmode(GPIO.BCM)
+		GPIO.setup(self.en,GPIO.OUT,initial=GPIO.LOW)
+		GPIO.setup(self.in1,GPIO.OUT,initial=GPIO.LOW)
+		GPIO.setup(self.in2,GPIO.OUT,initial=GPIO.LOW)
+		#self.ENA_pwm=GPIO.PWM(en,1000)
+		
+####################################################
+#Lichter am Board in Reihenfolge leuchten lassen
+####################################################		
+	def initial_blink(self):
+
 def init_engine():
 ########Motor-Pinbelegung################
     ENA = 13	#//L298 A
