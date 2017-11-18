@@ -4,9 +4,10 @@
 #14.11.2017
 #Socket-Server für die Remote Steuerung über Computer oder Handy
 
-import socket
-import sys
- 
+
+
+print '....SOCKET START!!!...'
+
 #Create Connection
 def create_socket():
     try:
@@ -34,8 +35,9 @@ def bind_socket():
         print ('Fehler beim Bind eines Sockets' + str (msg) + '/n' + 'neuer Verbindungsversuch..')
         bind_socket()
 
+#
 def socket_accept():
-    conn, address = s.accept
+    conn,address = s.accept()
     print ('Verbindung wurde aufgebaut unter  IP = ' + address[0] + ' Port' + str (address[1]))
     send_command(conn)
     conn.close()
@@ -48,3 +50,13 @@ def send_command(conn):
             sys.exit()
         if (len(str.encode(cmd)) >0): #nur daten senden wenn Eingabe größer null)
             conn.send(str.encode(cmd))
+            client_response = str(conn.recv(1024),"utf-8") #konvertiert von byte zu string, 1 junk = 1024; 
+            print (client_response, end=" ")
+def main():
+    create_socket()
+    bind_socket()
+    socket_accept()
+   
+
+main()
+            

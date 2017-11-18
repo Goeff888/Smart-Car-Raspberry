@@ -5,8 +5,7 @@
 #Ansteuern der LEDS
 
 
-import RPi.GPIO as GPIO
-import time
+import berrycar
 #import threading
 
 print '....LED START!!!...'
@@ -25,26 +24,31 @@ class LEDS(object):
 #Lichter am Board in Reihenfolge leuchten lassen
 ####################################################		
 	def initial_blink(self):
+		print ("initial_blink")
 		for i in range(1, 5):
 			GPIO.output(self.led0,True)
 			GPIO.output(self.led1,False)
 			GPIO.output(self.led2,False)
+			print ("Test1")
 			time.sleep(0.5)
 			GPIO.output(self.led0,True)
 			GPIO.output(self.led1,True)
 			GPIO.output(self.led2,False)
+			print ("Test2")
 			time.sleep(0.5)
 			GPIO.output(self.led0,True)
 			GPIO.output(self.led1,True)
 			GPIO.output(self.led2,True)
+			print ("Test3")
 			time.sleep(0.5)
 			GPIO.output(self.led0,False)
 			GPIO.output(self.led1,False)
 			GPIO.output(self.led2,False)
+			print ("Test4")
 	
 #Fubktion nicht hier verwenden da sonst alles aufgeräumnt wird	
-	def __del__(self):	
-		GPIO.cleanup()
+	#def __del__(self):	
+		#GPIO.cleanup()
 ####################################################		
 #Lichter für die Motorrichtung
 	def Motor_Forward():

@@ -7,13 +7,20 @@ li {
     color: green;
 }
 
-.button {
-
+.td{
+    
 }
+
+#control_header{
+    height: 50px;
+    background-color: #336699;
+    border: solid #FFFFFF;
+}
+
 
 #connect {
     background-color: #003366;
-    border: solid #FFFFFF;
+    
     color: white;
     text-align: center;
     text-decoration: none;
@@ -25,26 +32,49 @@ li {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-#drive_vertical{
-    background-color: #336699;
-    border: solid #FFFFFF;
+#vertical_active{
+    background-color: #336699;   
     color: white;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
-    display:block;
-    font-size: 60px;
+    cursor: pointer;   
+    font-size: 58px;
     width: 60px;
     height: 120px;
 }
 
-#drive_horizontal{
+#vertical_inactive{
+    background-color: #333333;   
+    color: grey;
+    text-align: center;
+    text-decoration: none;
+    cursor: not-allowed;   
+    font-size: 58px;
+    width: 60px;
+    height: 120px;
+}
+
+#small_horiz_active{
     background-color: #336699;
-    border: solid #FFFFFF;
+    border: none;
     color: white;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     float: left;
-    font-size: 60px;
+    font-size: 58px;
+    width: 100px;
+    height: 60;
+}
+
+#big_horiz_active{
+    background-color: #336699;    
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    float: left;
+    font-size: 58px;
+    width: 160px;
+    height: 60;
 }
