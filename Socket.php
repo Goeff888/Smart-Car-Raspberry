@@ -18,8 +18,8 @@ echo "Socket erzeugt";
 
 // Server data
 
-$host = '127.0.0.1';
-$port = 50007;
+$host = '192.168.0.107';
+$port = 9999;
 
 $error = NULL;
 $attempts = 0;

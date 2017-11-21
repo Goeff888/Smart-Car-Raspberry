@@ -15,7 +15,7 @@ class Drive(object):
 		self.in1 = in1
 		self.in2 = in2
 		
-		print ('Boardinitialisierung')
+		print '....MOTOR START!!!...'
 		GPIO.setmode(GPIO.BCM)
 		GPIO.setup(self.en,GPIO.OUT,initial=GPIO.LOW)
 		GPIO.setup(self.in1,GPIO.OUT,initial=GPIO.LOW)

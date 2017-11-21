@@ -6,7 +6,7 @@
 import RPi.GPIO as GPIO
 import time
 import socket
-import sys
+#import sys
 #import led_progs as LED
 import drive_progs as DRIVE
 
@@ -26,6 +26,45 @@ IN1 = 19	#//INI1
 IN2 = 16	#//INI2
 IN3 = 21	#//INI3
 IN4 = 26	#//INI4
+
+class Drive(object):
+	def __init__(self, en,in1,in2):
+		self.en = en
+		self.in1 = in1
+		self.in2 = in2
+		
+		print '....MOTOR START!!!...'
+		GPIO.setmode(GPIO.BCM)
+		GPIO.setup(self.en,GPIO.OUT,initial=GPIO.LOW)
+		GPIO.setup(self.in1,GPIO.OUT,initial=GPIO.LOW)
+		GPIO.setup(self.in2,GPIO.OUT,initial=GPIO.LOW)
+		self.EN_pwm=GPIO.PWM(en,1000)
+		self.EN_pwm.ChangeDutyCycle(50)	################
+####################################################
+#Motoransteuerung
+#Die Fahrtrichtung muss im Hauptprogramm über gegensätzliches Setzen der beiden Motorobjekte
+####################################################		
+	def Motor_Forward(self):
+		print 'motor forward'
+		GPIO.output(self.en,True)	
+		GPIO.output(self.in1,True)
+		GPIO.output(self.in2,False)
+	def Motor_Backward(self):
+		print 'motor forward'
+		GPIO.output(self.en,True)	
+		GPIO.output(self.in1,False)
+		GPIO.output(self.in2,True)
+	def Motor_Stop(self):
+		print 'motor_stop'
+		GPIO.output(self.en,False)	
+		GPIO.output(self.in1,False)
+		GPIO.output(self.in2,False)
+	
+	def ENA_Speed(EA_num):
+		speed=hex(eval('0x'+EA_num))
+		speed=int(speed,16)
+		print 'EA_A??? %d '%speed
+		#self.EN_pwm.ChangeDutyCycle(speed)
 
 #leds = LED.LEDS(LED0,LED1,LED2)
 #leds.initial_blink()
