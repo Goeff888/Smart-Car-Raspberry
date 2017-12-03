@@ -31,11 +31,11 @@
   <!-- 
   <td rowspan = "2"><iframe src="http://192.168.0.107:8081" width="320" height="240" frameborder="0" allowfullscreen="allowfullscreen"></iframe></td>
   -->
-  <td><input type="button" value="^" name = "cup" id ="vertical_active" onclick="callPHP_Connect(document.robotaccess.cup.name);"></td>
+  <td><input type="button" value="^" name = "cup" id ="vertical_active" onclick="callPHP_Connect();"></td>
  </tr>
  <tr>
   <td><input type="button" value="v" name = "bac" id ="vertical_active" onclick="callPHP_Connect(document.robotaccess.bac.name);"></td>
-  <td><input type="button" value="v" name = "cdo" id ="vertical_active" onclick="callPHP_Connect(document.robotaccess.cdo.name);"></td>
+  <td><input type="button" value="v" name = "cdo" id ="vertical_active" onclick="callPHP_Connect();"></td>
  </tr>
 <tr><td></td>
  <td>
@@ -44,8 +44,8 @@
   <input type="button" value=">" name = "rig" id ="small_horiz_active" onclick="callPHP_Connect(document.robotaccess.rig.name);">
  </td>
  <td>
-   <input type="button" value="<" name = "cle" id ="big_horiz_active" onclick="callPHP_Connect(document.robotaccess.lef.name);">
-   <input type="button" value=">" name = "cri" id ="big_horiz_active" onclick="callPHP_Connect(document.robotaccess.rig.name);">
+   <input type="button" value="<" name = "cle" id ="big_horiz_active" onclick="callPHP_Connect();">
+   <input type="button" value=">" name = "cri" id ="big_horiz_active" onclick="callPHP_Connect();">
  </td>
 </tr>
 </table>

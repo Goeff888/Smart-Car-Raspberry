@@ -45,8 +45,9 @@ if (!$connected)
     return NULL;
 }
 // Write to the socket
-$input="Hallo Hier ist der Text für den Server";
+//$input="Hallo Hier ist der Text für den Server"; /Daten kommen an aber anscheinend wird Verbindung beendet ohne neuaufgebaut zu werden
 $input2 = $_POST["action"];
+echo $input2;
 socket_write($socket, $input2, strlen ($input2)) or die("Could not write input\n");
 
 echo "Send Enable back into socket to the Server";
