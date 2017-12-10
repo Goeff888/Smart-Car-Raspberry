@@ -3,13 +3,13 @@
 #Christian Göhler
 #14.11.2017
 #Socket-Server für die Remote Steuerung über Computer oder Handy
-from __future__ import print_function
+#from __future__ import print_function
 import socket
 import sys
 
 #print '....SOCKET START!!!...'
 
-#Create Connection
+#Create Socket
 def create_socket():
     try:
         global host
@@ -44,13 +44,22 @@ def socket_accept():
     #print (adress)
     print ('Verbindung wurde aufgebaut unter IP:' + address[0] + ' Port:' + str (address[1]))
     send_command(conn)
-
     conn.close()
+
 #Senden von Befehlen an den Client
-def send_command(conn):
-    
+def send_command(conn):  
     while True: #unendliche Schleife um das Schließen des Sockets zu verhindern
-        ser_response = 'Hier ist der Socket-Server vom Berry-Car'
+        ser_response = 'Hier ist der Socket-Server vom Berry-Car' 
+        cmd = input()
+        if cmd == 'quit':#Beenden
+            print ('verbindung wird beendet')
+            conn.close()
+            sys.exit()
+        if len(str.encode(cmd)) > 0:
+            conn.send(str.encode(cmd))
+            client_response = str(conn.recv(1024), "utf-8")
+            print (client_response, end="")
+            
         #client_response = str(conn.recv(1024)).encode("utf-8")
         #if (len(str.encode(client_response)) >0): #Prüfen, ob eine Antwort gekommen ist'
          #   if (client_response=='for'):
