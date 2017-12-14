@@ -47,18 +47,22 @@ def socket_accept():
     conn.close()
 
 #Senden von Befehlen an den Client
-def send_command(conn):  
+def init_con(conn):
+    ser_response = 'Hier ist der Socket-Server vom Berry-Car'
+    conn.send(str.encode(cmd))
     while True: #unendliche Schleife um das Schließen des Sockets zu verhindern
-        ser_response = 'Hier ist der Socket-Server vom Berry-Car' 
-        cmd = input()
-        if cmd == 'quit':#Beenden
-            print ('verbindung wird beendet')
-            conn.close()
-            sys.exit()
-        if len(str.encode(cmd)) > 0:
-            conn.send(str.encode(cmd))
-            client_response = str(conn.recv(1024), "utf-8")
-            print (client_response, end="")
+
+        client_response = str(conn.recv(1024), "utf-8")
+        print (client_response, end="")
+        #cmd = input()
+        #if cmd == 'quit':#Beenden
+         #   print ('verbindung wird beendet')
+          #  conn.close()
+           # sys.exit()
+        #if len(str.encode(cmd)) > 0:
+         #   conn.send(str.encode(cmd))
+          #  client_response = str(conn.recv(1024), "utf-8")
+           # print (client_response, end="")
             
         #client_response = str(conn.recv(1024)).encode("utf-8")
         #if (len(str.encode(client_response)) >0): #Prüfen, ob eine Antwort gekommen ist'
@@ -78,6 +82,9 @@ def send_command(conn):
          #   client_response = str(conn.recv(1024)).encode("utf-8")# Python 3.6: str(conn.recv(1024),"utf-8") #konvertiert von byte zu string, 1 junk = 1024; 
             
           #  print (client_response)
+def recieve_data()
+    client_response = str(conn.recv(1024), "utf-8")
+    
 def main():
     create_socket()
     bind_socket()
