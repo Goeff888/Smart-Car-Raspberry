@@ -5,12 +5,17 @@
 #Socket-Server für die Remote Steuerung über Computer oder Handy
 #from __future__ import print_function
 import socket
-import sys
+#import sys
 
 #print '....SOCKET START!!!...'
 
+<<<<<<< HEAD:socket_recv.py
 #Create Socket
 def create_socket():
+=======
+#Create Connection
+def create_socket(fg):
+>>>>>>> da683a1cab2fc152b9174e3a4e15d8e94c189acd:socket_progs.py
     try:
         global host
         global port
@@ -28,21 +33,21 @@ def bind_socket():
         global port
         global s
          
-        print ('Binding auf Port: ' + str(port))
+        print('Binding auf Port: ' + str(port))
         s.bind((host,port))
         s.listen (5)
      
     except socket.error as msg:
-        print ('Fehler beim Bind eines Sockets: ' + str (msg) + '/n' + 'neuer Verbindungsversuch..')
+        print('Fehler beim Bind eines Sockets: ' + str (msg) + '/n' + 'neuer Verbindungsversuch..')
         bind_socket()
 
 #Verbindung mit Client aufbauen
 def socket_accept():
-    print ("Socket accept")
-    conn,address = s.accept()
-    #print (conn)
-    #print (adress)
-    print ('Verbindung wurde aufgebaut unter IP:' + address[0] + ' Port:' + str (address[1]))
+    print("Socket accept")
+    conn, address = s.accept()
+    #print(conn)
+    #print(adress)
+    print('Verbindung wurde aufgebaut unter IP:' + address[0] + ' Port:' + str (address[1]))
     send_command(conn)
     conn.close()
 
@@ -82,9 +87,14 @@ def init_con(conn):
          #   client_response = str(conn.recv(1024)).encode("utf-8")# Python 3.6: str(conn.recv(1024),"utf-8") #konvertiert von byte zu string, 1 junk = 1024; 
             
           #  print (client_response)
+<<<<<<< HEAD:socket_recv.py
 def recieve_data()
     client_response = str(conn.recv(1024), "utf-8")
     
+=======
+
+
+>>>>>>> da683a1cab2fc152b9174e3a4e15d8e94c189acd:socket_progs.py
 def main():
     create_socket()
     bind_socket()
